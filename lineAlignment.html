@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang ="ja">
+  <head>
+    <meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <title>改行除去ツール</title>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#t_area').bind('keydown',function(){
+          var str = $(this).val();
+          str = str.replace(/\r?\n/g," ")
+          $(this).val(str);
+        });
+      });
+    </script>
+  </head>
+  <body>
+
+    <p>以下のテキストエリアに文字を入力し、キーを押すと文章が整形されます。</p>
+    <textarea id="t_area" cols="80" rows="50"></textarea>
+  </body>
+</html>
